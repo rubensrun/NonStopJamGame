@@ -11,6 +11,8 @@ public class AudioManager : MonoBehaviour
     [Header("-------Audio Clip-------")]
     public AudioClip background;
     public AudioClip screamingStart;
+    public AudioClip carCollision;
+    public AudioClip gameOverSFX;
 
 
     public static AudioManager Instance { get; private set; }
@@ -54,6 +56,16 @@ public class AudioManager : MonoBehaviour
         musicSource.clip = background;
         musicSource.loop = true;
         musicSource.Play();
+    }
+
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
+
+    public void UnpauseMusic()
+    {
+        musicSource.UnPause();
     }
 }
 
