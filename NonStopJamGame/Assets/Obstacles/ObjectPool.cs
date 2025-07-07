@@ -7,9 +7,9 @@ public class ObjectPool : MonoBehaviour
     public GameManager gManage;
     public int poolSize = 10;
 
-    private Queue<GameObject> pool = new Queue<GameObject>();
+    public Queue<GameObject> pool = new Queue<GameObject>();
 
-    private void Start()
+    private void Awake()
     {
         for (int i = 0; i < poolSize; i++)
         {
@@ -29,8 +29,10 @@ public class ObjectPool : MonoBehaviour
 
     public GameObject GetFromPool()
     {
+        Debug.Log("hhjhjhjh");
         if (pool.Count > 0)
         {
+            Debug.Log("jhjjhjhjjh");
             GameObject obj = pool.Dequeue();
             obj.SetActive(true);
             return obj;

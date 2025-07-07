@@ -54,7 +54,9 @@ public class GameManager : MonoBehaviour
 
     public void SpawnScene()
     {
-        GameObject obj = scenePool.GetFromPool();
+        Debug.Log("ahhhh");
+        GameObject obj;
+        obj = scenePool.GetFromPool();
         if (obj != null)
         {
             obj.transform.position = new Vector3(24.45f, 0, 0);
