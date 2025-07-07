@@ -41,6 +41,8 @@ public class ObjectPool : MonoBehaviour
     public void ReturnToPool(GameObject obj)
     {
         obj.SetActive(false);
+        ObjectMover objM = obj.GetComponent<ObjectMover>();
+        GameManager.activeObjectMovers.Remove(objM);
         pool.Enqueue(obj);
     }
 }

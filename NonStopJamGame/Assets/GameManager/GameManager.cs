@@ -5,7 +5,7 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static float speed;
-    public List<ObjectMover> activeObjectMovers = new List<ObjectMover>();
+    public static List<ObjectMover> activeObjectMovers = new List<ObjectMover>();
     public ObjectPool CarLeftPool;
 
     private void Start()
@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
         Spawn();
     }
 
-    public void LoseSpeed(float loss)
+    public static void LoseSpeed(float loss)
     {
         speed -= loss;
-        for (int i = 0; i < activeObjectMovers.Count; ++i)
+        Debug.Log(activeObjectMovers.Count);
+        for (int i = 0; i < activeObjectMovers.Count; i++)
         {
+            Debug.Log("set speed");
             activeObjectMovers[i].SetSpeed();
         }
     }

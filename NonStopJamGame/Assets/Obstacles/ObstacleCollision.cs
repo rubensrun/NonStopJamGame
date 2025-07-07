@@ -9,7 +9,7 @@ public class ObstacleCollision : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            GameManager.speed -= speedLoss;
+            GameManager.LoseSpeed(speedLoss);
         }
         objectMover.ReturnToPool();
     }
