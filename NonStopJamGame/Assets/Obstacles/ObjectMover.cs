@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+
 
 public class ObjectMover : MonoBehaviour
 {
@@ -14,7 +16,7 @@ public class ObjectMover : MonoBehaviour
 
     public void SetSpeed()
     {
-        rb.linearVelocity = new Vector2(-GameManager.speed + speedModifier, vertSpeed);
+        rb.linearVelocity = new Vector2(-Mathf.Sqrt(GameManager.speed) + speedModifier, vertSpeed);
     }
 
     public void ReturnToPool()

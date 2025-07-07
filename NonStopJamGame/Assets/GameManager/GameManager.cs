@@ -5,15 +5,18 @@ using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static float speed;
+    public float speedGain;
     public static List<ObjectMover> activeObjectMovers = new List<ObjectMover>();
-    public ObjectPool CarLeftPool;
-    public ObjectPool ScenePool;
+    public ObjectPool carLeftPool;
+    public ObjectPool carRightPool;
+    public ObjectPool scenePool;
+    public Vector3 spawnLane1;
+    public Vector3 spawnLane2;
 
     private void Start()
     {
         speed = 30f;
-        Spawn();
-        GameObject obj = ScenePool.GetFromPool();
+        GameObject obj = scenePool.GetFromPool();
         if (obj != null)
         {
             obj.transform.position = new Vector3(0, 0, 0);
@@ -22,15 +25,7 @@ public class GameManager : MonoBehaviour
             objM.SetSpeed();
             activeObjectMovers.Add(objM);
         }
-        GameObject obj2 = ScenePool.GetFromPool();
-        if (obj2 != null)
-        {
-            obj2.transform.position = new Vector3(24.45f, 0, 0);
-            obj2.transform.rotation = Quaternion.identity;
-            ObjectMover objM2 = obj2.GetComponent<ObjectMover>();
-            objM2.SetSpeed();
-            activeObjectMovers.Add(objM2);
-        }
+        SpawnScene();
     }
 
     public static void LoseSpeed(float loss)
@@ -44,23 +39,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Spawn()
+    private void Spawn(Vector3 location, ObjectPool targetPool)
     {
-        GameObject obj = CarLeftPool.GetFromPool();
+        GameObject obj = targetPool.GetFromPool();
         if (obj != null)
         {
-            obj.transform.position = new Vector3(10, Random.Range(-4f, 4f), 0);
+            obj.transform.position = location;
             obj.transform.rotation = Quaternion.identity;
             ObjectMover objM = obj.GetComponent<ObjectMover>();
             objM.SetSpeed();
             activeObjectMovers.Add(objM);
         }
-        StartCoroutine(Wait());
     }
 
     public void SpawnScene()
     {
-        GameObject obj = ScenePool.GetFromPool();
+        GameObject obj = scenePool.GetFromPool();
         if (obj != null)
         {
             obj.transform.position = new Vector3(24.45f, 0, 0);
@@ -69,11 +63,33 @@ public class GameManager : MonoBehaviour
             objM.SetSpeed();
             activeObjectMovers.Add(objM);
         }
+        int rand = Random.Range(0, 4);
+        if (rand == 1)
+        {
+            Spawn(spawnLane1, carLeftPool);
+        }
+        else if (rand == 2)
+        {
+            Spawn(spawnLane1, carRightPool);
+        }
+        rand = Random.Range(0, 4);
+        if (rand == 1)
+        {
+            Spawn(spawnLane2, carLeftPool);
+        }
+        else if (rand == 2)
+        {
+            Spawn(spawnLane2, carRightPool);
+        }
     }
 
-    private IEnumerator Wait()
+    private void Update()
     {
-        yield return new WaitForSeconds(Random.Range(0.5f, 1.5f));
-        Spawn();
+        speed += Time.deltaTime * speedGain;
+        for (int i = 0; i < activeObjectMovers.Count; i++)
+        {
+            Debug.Log("set speed");
+            activeObjectMovers[i].SetSpeed();
+        }
     }
 }

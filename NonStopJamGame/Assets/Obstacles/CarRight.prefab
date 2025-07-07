@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2311068432486003058}
   - component: {fileID: 8524902159073585149}
   m_Layer: 0
-  m_Name: CarLeft
+  m_Name: CarRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 68037723425395300, guid: 30fcad6bed4b7a9489025958ace61a82, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.39, y: 0.26}
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f340e1b5dfd3247b92d53864b0d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: -2
+  speedModifier: 2
   vertSpeed: 0
   rb: {fileID: 2311068432486003058}
 --- !u!50 &2311068432486003058
