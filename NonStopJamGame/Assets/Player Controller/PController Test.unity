@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CarLeftPool: {fileID: 1107260940}
+  ScenePool: {fileID: 150482537}
 --- !u!4 &70327904
 Transform:
   m_ObjectHideFlags: 0
@@ -192,6 +193,53 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70327902}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.8161453, y: 1.5324215, z: 0.00024612062}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &150482536
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150482538}
+  - component: {fileID: 150482537}
+  m_Layer: 0
+  m_Name: ScenePool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &150482537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150482536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 169cfd4301e7cff469c188eb08955318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5117466777237227103, guid: 87044b78905126740a314673cb2a29d5, type: 3}
+  gManage: {fileID: 70327903}
+  poolSize: 3
+--- !u!4 &150482538
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 150482536}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8161453, y: 1.5324215, z: 0.00024612062}
@@ -404,7 +452,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -1668247726207860132, guid: c2043bf8e497f4d7fa01067b07627379, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -425,8 +473,8 @@ Transform:
   m_GameObject: {fileID: 818682007}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.02, y: -0.54, z: 0}
-  m_LocalScale: {x: 7.66, y: 7.66, z: 7.66}
+  m_LocalPosition: {x: -7.68, y: -0.98, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -575,7 +623,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 2.1792603}
+  m_Offset: {x: 0, y: 1.6085091}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -585,7 +633,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 10.995104}
+  m_Size: {x: 1, y: 17.496708}
   m_EdgeRadius: 0
 --- !u!4 &845326261
 Transform:
@@ -596,7 +644,7 @@ Transform:
   m_GameObject: {fileID: 845326258}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.59, y: -1.92, z: -0.043060165}
+  m_LocalPosition: {x: -35.73, y: -1.92, z: -0.043060165}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -826,7 +874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 4911643867916044465, guid: fd8d6e2633f6bfa469edf7b314f6f073, type: 3}
   gManage: {fileID: 70327903}
-  poolSize: 50
+  poolSize: 6
 --- !u!4 &1107260941
 Transform:
   m_ObjectHideFlags: 0
@@ -1363,6 +1411,7 @@ SceneRoots:
   - {fileID: 818682012}
   - {fileID: 70327904}
   - {fileID: 1107260941}
+  - {fileID: 150482538}
   - {fileID: 547357098}
   - {fileID: 845326261}
   - {fileID: 1088070682}
