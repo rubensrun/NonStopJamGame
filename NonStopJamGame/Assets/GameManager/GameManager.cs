@@ -25,12 +25,14 @@ public class GameManager : MonoBehaviour
     public Vector3 central2;
     public Vector3 topRoad;
     private float minSpeed = 10f;
-   private float maxSpeed = 50f;
+    private float maxSpeed = 50f;
 
     public GameObject gameOver;
 
     private void Start()
     {
+        score = 0;
+        activeObjectMovers = new List<ObjectMover>();
         speed = 30f;
         GameObject obj = scenePool.GetFromPool();
         if (obj != null)

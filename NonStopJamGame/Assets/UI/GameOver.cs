@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
@@ -18,5 +19,10 @@ public class GameOver : MonoBehaviour
         explosion.SetActive(true);
         scoreText.SetActive(false);
         speedo.SetActive(false);
+    }
+
+    public void TryAgain()
+    {
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
     }
 }
