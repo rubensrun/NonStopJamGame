@@ -1,12 +1,10 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class ObjectPool : MonoBehaviour
+public class EffectPool : MonoBehaviour
 {
     public GameObject prefab;
-    public GameManager gManage;
     public int poolSize = 10;
-    public EffectPool effectPool;
 
     public Queue<GameObject> pool = new Queue<GameObject>();
 
@@ -17,11 +15,11 @@ public class ObjectPool : MonoBehaviour
             GameObject obj = Instantiate(prefab);
             obj.SetActive(false);
 
-            ObjectMover objM = obj.GetComponent<ObjectMover>();
+            EffectController eCont = obj.GetComponent<EffectController>();
 
-            if (objM != null)
+            if (eCont != null)
             {
-                objM.SetPool(this);
+                eCont.SetPool(this);
             }
 
             pool.Enqueue(obj);
@@ -41,18 +39,7 @@ public class ObjectPool : MonoBehaviour
 
     public void ReturnToPool(GameObject obj)
     {
-        if (obj.transform.position.x > -12 && effectPool)
-        {
-            GameObject effect = effectPool.GetFromPool();
-            if (effect != null)
-            {
-                effect.transform.position = obj.transform.position;
-                effect.transform.rotation = Quaternion.identity;
-            }
-        }
         obj.SetActive(false);
-        ObjectMover objM = obj.GetComponent<ObjectMover>();
-        GameManager.activeObjectMovers.Remove(objM);
         pool.Enqueue(obj);
     }
 }

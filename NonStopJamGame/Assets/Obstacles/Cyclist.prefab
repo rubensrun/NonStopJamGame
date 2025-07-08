@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2311068432486003058}
   - component: {fileID: 8524902159073585149}
   m_Layer: 0
-  m_Name: Barrier
+  m_Name: Cyclist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.01, y: -1.91, z: 0}
-  m_LocalScale: {x: 6.74, y: 6.74, z: 6.74}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,13 +79,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 80
-  m_Sprite: {fileID: -7402337540744564500, guid: 0877f7085eaf2e449809cdef192e0c65, type: 3}
+  m_SortingOrder: 96
+  m_Sprite: {fileID: 21300000, guid: 91d0be923fb5cce438d11a7aadb45034, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.39, y: 0.26}
+  m_Size: {x: 10, y: 10}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -125,17 +125,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.004460588, y: -0.007678453}
+  m_Offset: {x: 0.01214131, y: -0.02172625}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.13}
-    newSize: {x: 0.39, y: 0.26}
+    oldSize: {x: 10, y: 10}
+    newSize: {x: 10, y: 10}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.1435067, y: 0.111797325}
+  m_Size: {x: 0.36571735, y: 0.1756509}
   m_EdgeRadius: 0
 --- !u!114 &7300447694088160739
 MonoBehaviour:
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01f340e1b5dfd3247b92d53864b0d534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedModifier: 0
+  speedModifier: 1
   vertSpeed: 0
   rb: {fileID: 2311068432486003058}
 --- !u!50 &2311068432486003058
@@ -191,5 +191,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26da4775f96201e4d8b821fdd48dfa74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedLoss: 9
+  speedLoss: 7
   objectMover: {fileID: 7300447694088160739}

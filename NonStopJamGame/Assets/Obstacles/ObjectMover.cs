@@ -16,7 +16,7 @@ public class ObjectMover : MonoBehaviour
 
     public void SetSpeed()
     {
-        rb.linearVelocity = new Vector2(-Mathf.Sqrt(GameManager.speed) + speedModifier, vertSpeed);
+        rb.linearVelocity = new Vector2(-Mathf.Sqrt(GameManager.speed) + speedModifier, vertSpeed * Mathf.Sqrt(GameManager.speed));
     }
 
     public void ReturnToPool()
